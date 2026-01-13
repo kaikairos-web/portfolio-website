@@ -82,12 +82,30 @@ header{padding-top:140px;}
   line-height:1.1;
 }
 
+/* Skills card */
+.skills-card{
+  max-width:900px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Skills chips */
+.skills-chips{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
+.skill-chip{background:rgba(255,255,255,0.03); color:#ffffff; padding:.6rem 1rem; border-radius:999px; border:1px solid rgba(255,255,255,0.04); font-weight:700; font-size:1.25rem; transition:transform .18s ease, box-shadow .18s ease}
+.skill-chip:hover{transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,240,208,0.06)}
+
 /* Responsive: slightly smaller on medium and small screens */
 @media (max-width:992px){
   .skills-center{font-size:1.6rem}
+  .skills-card{padding:2rem}
+  .skill-chip{font-size:1rem; padding:.5rem .9rem}
 }
 @media (max-width:576px){
   .skills-center{font-size:1.15rem}
+  .skills-card{padding:1.25rem}
+  .skill-chip{font-size:.95rem; padding:.4rem .8rem}
 }
 
 /* Experience timeline */
