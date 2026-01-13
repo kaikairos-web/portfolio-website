@@ -1,4 +1,3 @@
-
 AOS.init({duration:800, once:true});
 
 // Typing effect for role text (simple)

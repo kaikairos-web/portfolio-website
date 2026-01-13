@@ -1,4 +1,3 @@
-Alex Morgan
 Frontend Developer
 
 Email: alex@example.com

@@ -1,9 +1,8 @@
-
 :root{
   --bg: #13131b; /* deep dark */
   --panel: #1e1e2f;
   --muted: #9aa0a6;
-  --teal: #00f0d0;
+  --teal: #00f0d0e3;
   --glow: 0 6px 30px rgba(0,240,208,0.15);
 }
 
@@ -16,17 +15,17 @@ body{
 }
 
 /* Navbar */
-.navbar{background: rgba(10,10,15,0.6); backdrop-filter: blur(6px);}
-.navbar .nav-link{color:var(--muted);}
-.navbar .nav-link.active, .navbar .nav-link:hover{color:var(--teal);}
+.navbar{background: rgba(10,10,15,0.6); backdrop-filter: blur(6px);} 
+.navbar .nav-link{color:var(--muted);} 
+.navbar .nav-link.active, .navbar .nav-link:hover{color:var(--teal);} 
 .navbar-brand{font-weight:700; color:#fff}
 
 /* Sections spacing */
-section{padding-top:80px; padding-bottom:80px;}
+section{padding-top:80px; padding-bottom:80px;} 
 .bg-dark-light{background:#0f1020;}
 
 /* Hero */
-header{padding-top:140px;}
+header{padding-top:140px;} 
 .text-teal{color:var(--teal)}
 .btn-outline-teal{border-color:rgba(0,240,208,0.15); color:var(--teal)}
 .btn-outline-teal:hover{background:rgba(0,240,208,0.06)}
@@ -38,7 +37,7 @@ header{padding-top:140px;}
   display:inline-block;
   padding:18px;
   border-radius:18px;
-  background:linear-gradient(135deg, rgba(0, 240, 208, 0.295), rgba(0,183,255,0.02));
+  background:linear-gradient(135deg, rgba(39, 75, 70, 0), rgba(0,183,255,0.02));
   box-shadow: var(--glow);
   max-width:320px;
   z-index:1;
@@ -48,7 +47,7 @@ header{padding-top:140px;}
   content:"";
   position:absolute;
   inset: -30px -10px -10px -10px;
-  background: radial-gradient(closest-side, rgba(0,240,208,0.12), rgba(0,183,255,0.03));
+  background: radial-gradient(closest-side, rgba(74, 143, 134, 0.12), rgba(0,183,255,0.03));
   filter:blur(18px);
   z-index:0;
   border-radius:22px;
@@ -143,15 +142,18 @@ header{padding-top:140px;}
 /* Certificates */
 #certificates{background:linear-gradient(180deg,#181827,#06233b48); border-top:1px solid rgba(255,255,255,0.02)}
 .cert-grid{margin-top:8px}
-.cert-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); border:1px solid rgba(255,255,255,0.03); border-radius:12px; overflow:hidden; transition:transform .28s ease, box-shadow .28s ease; box-shadow:0 10px 30px rgba(0,240,208,0.04); display:flex; flex-direction:column; align-items:center;}
+.cert-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); border:1px solid rgba(255,255,255,0.03); border-radius:12px; overflow:hidden; transition:transform .28s ease, box-shadow .28s ease; box-shadow:0 10px 30px rgba(0,240,208,0.04); display:flex; flex-direction:column; align-items:center}
 .cert-card:hover{transform:translateY(-8px); box-shadow:0 22px 70px rgba(0,240,208,0.08); border-color:rgba(0,240,208,0.09)}
 /* Make thumbnails full-width (large) and keep aspect ratio */
-.cert-thumb{display:block; width:100%; height:420px; object-fit:contain; object-position:center; margin:0; border-radius:0; background:#000}
+.cert-thumb{display:block; width:100%; height:420px; object-fit:contain; object-position:center; margin:0; border-radius:0; background:#162727}
 .cert-card figcaption{background:transparent; text-align:center; padding:18px}
+.cert-card h5{color:#ffffff; font-weight:700}
+/* Make subtitles (small/text-muted) white inside certificate cards */
+.cert-card p.small, .cert-card p.text-muted { color:#ffffff; opacity:0.92 }
 .view-cert{cursor:pointer}
 
 /* Modal / Lightbox */
-.cert-modal{position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.8); opacity:0; visibility:hidden; transition:opacity .28s ease; z-index:1050}
+.cert-modal{position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(73, 92, 94, 0.8); opacity:0; visibility:hidden; transition:opacity .28s ease; z-index:1050}
 .cert-modal.show{opacity:1; visibility:visible}
 .cert-modal-inner{position:relative; transform:scale(.96); transition:transform .28s cubic-bezier(.2,.8,.2,1); max-width:1200px; width:92%; max-height:92vh; overflow:auto; display:flex; flex-direction:column; align-items:center}
 .cert-modal.show .cert-modal-inner{transform:scale(1)}
