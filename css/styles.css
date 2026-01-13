@@ -34,12 +34,25 @@ header{padding-top:140px;}
 
 /* Profile hexagon / glow */
 .profile-hex, .profile-hex-sm{
+  position:relative;
   display:inline-block;
   padding:18px;
   border-radius:18px;
   background:linear-gradient(135deg, rgba(0, 240, 208, 0.295), rgba(0,183,255,0.02));
   box-shadow: var(--glow);
   max-width:320px;
+  z-index:1;
+}
+/* Soft backlight behind profile image */
+.profile-hex::after{
+  content:"";
+  position:absolute;
+  inset: -30px -10px -10px -10px;
+  background: radial-gradient(closest-side, rgba(0,240,208,0.12), rgba(0,183,255,0.03));
+  filter:blur(18px);
+  z-index:0;
+  border-radius:22px;
+  pointer-events:none;
 }
 .profile-hex-sm{max-width:200px; padding:12px}
 .profile-img{display:block; width:100%; height:auto; border-radius:12px}
@@ -84,11 +97,28 @@ header{padding-top:140px;}
 
 /* Skills card */
 .skills-card{
+  position:relative;
   max-width:900px;
   background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
   border:1px solid rgba(255,255,255,0.03);
   border-radius:14px;
   box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  z-index:1;
+}
+/* Backlight glow behind skills card */
+.skills-card::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:120%;
+  height:120%;
+  background: radial-gradient(closest-side, rgba(0,240,208,0.12), rgba(0,183,255,0.06), transparent 60%);
+  filter:blur(28px);
+  z-index:0;
+  border-radius:18px;
+  pointer-events:none;
 }
 
 /* Skills chips */
