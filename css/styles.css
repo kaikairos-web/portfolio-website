@@ -69,6 +69,39 @@ header{padding-top:140px;}
 .form-control.dark::placeholder{color:var(--muted)}
 .btn:focus{box-shadow:none}
 
+/* Skills badges */
+.skill-badge{background:transparent; border:1px solid rgba(255,255,255,0.04); color:#ffffff; padding:.45rem .75rem; border-radius:.5rem; margin-right:.5rem; margin-bottom:.5rem; display:inline-block}
+
+/* Centered skills text */
+.skills-center{
+  font-weight:700;
+  font-size:2.25rem;
+  letter-spacing:0.3px;
+  color:#ffffff;
+  margin:0 auto;
+  line-height:1.1;
+}
+
+/* Responsive: slightly smaller on medium and small screens */
+@media (max-width:992px){
+  .skills-center{font-size:1.6rem}
+}
+@media (max-width:576px){
+  .skills-center{font-size:1.15rem}
+}
+
+/* Experience timeline */
+.timeline{position:relative}
+.timeline .item{border-left:3px solid rgba(0,240,208,0.08); padding-left:1rem; margin-bottom:1.5rem}
+.timeline .title{font-weight:700; color:#ffffff}
+.timeline .meta{color:#d4af37}
+
+/* Certificates */
+.card p.small{color:#d4af37}
+
+/* Resume */
+#resume .btn-teal{padding:.75rem 1.2rem}
+
 /* Footer */
 footer{background:#2b2b61}
 
