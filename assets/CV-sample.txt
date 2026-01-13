@@ -1,0 +1,15 @@
+Alex Morgan
+Frontend Developer
+
+Email: alex@example.com
+Website: https://example.com
+
+Summary:
+Experienced frontend developer building responsive and accessible web interfaces using React, JavaScript and modern CSS.
+
+Skills:
+- HTML5, CSS3, JavaScript
+- React, Vue, Bootstrap
+- UI/UX Design, Accessibility
+
+Replace this file with your actual CV (PDF or DOCX) and update the link in index.html if necessary.

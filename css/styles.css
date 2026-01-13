@@ -1,0 +1,91 @@
+
+:root{
+  --bg: #13131b; /* deep dark */
+  --panel: #1e1e2f;
+  --muted: #9aa0a6;
+  --teal: #00f0d0;
+  --glow: 0 6px 30px rgba(0,240,208,0.15);
+}
+
+/* Body */
+body{
+  font-family: 'Noto Serif', serif;
+  background: var(--bg);
+  color: #ffffff;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Navbar */
+.navbar{background: rgba(10,10,15,0.6); backdrop-filter: blur(6px);}
+.navbar .nav-link{color:var(--muted);}
+.navbar .nav-link.active, .navbar .nav-link:hover{color:var(--teal);}
+.navbar-brand{font-weight:700; color:#fff}
+
+/* Sections spacing */
+section{padding-top:80px; padding-bottom:80px;}
+.bg-dark-light{background:#0f1020;}
+
+/* Hero */
+header{padding-top:140px;}
+.text-teal{color:var(--teal)}
+.btn-outline-teal{border-color:rgba(0,240,208,0.15); color:var(--teal)}
+.btn-outline-teal:hover{background:rgba(0,240,208,0.06)}
+.btn-teal{background:linear-gradient(90deg,#00f0d0,#00b7ff); color:#032; border:0}
+
+/* Profile hexagon / glow */
+.profile-hex, .profile-hex-sm{
+  display:inline-block;
+  padding:18px;
+  border-radius:18px;
+  background:linear-gradient(135deg, rgba(0, 240, 208, 0.295), rgba(0,183,255,0.02));
+  box-shadow: var(--glow);
+  max-width:320px;
+}
+.profile-hex-sm{max-width:200px; padding:12px}
+.profile-img{display:block; width:100%; height:auto; border-radius:12px}
+
+/* Reduce glow on small screens */
+@media(max-width:576px){
+  .profile-hex{box-shadow: 0 4px 12px rgba(0,240,208,0.08)}
+}
+
+/* Services cards */
+.service-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); border:1px solid rgba(255,255,255,0.02); transition:transform .25s ease, box-shadow .25s ease}
+.service-card:hover{transform:translateY(-8px) scale(1.02); box-shadow:0 8px 40px rgba(0,240,208,0.08); border-color: rgba(0,240,208,0.12)}
+
+/* Project cards */
+.project-card{background:var(--panel); position:relative; overflow:hidden}
+.project-card img{transition:transform .35s ease, filter .35s ease}
+.project-card .overlay{position:absolute; left:0; right:0; bottom:0; background:linear-gradient(0deg, rgba(0,0,0,0.75), rgba(0,0,0,0.2)); color:#fff; transform:translateY(100%); transition:transform .28s ease}
+.project-card:hover img{transform:scale(1.06); filter:brightness(.85)}
+.project-card:hover .overlay{transform:translateY(0)}
+
+/* Service icon hover */
+.service-card .icon{transition:transform .25s ease, box-shadow .25s ease}
+.service-card:hover .icon{transform:translateY(-6px) scale(1.08); box-shadow:0 10px 30px rgba(0,240,208,0.08)}
+
+/* Contact form */
+.form-control.dark{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--teal)}
+.form-control.dark::placeholder{color:var(--muted)}
+.btn:focus{box-shadow:none}
+
+/* Footer */
+footer{background:#2b2b61}
+
+/* Small helpers */
+.text-muted{color:#ffffff}
+
+/* Specific overrides */
+.lead-white{color:#ffffff}
+
+/* Smooth anchor scroll offset fix */
+:target:before{content:""; display:block; height:80px; margin-top:-80px}
+
+/* Accessibility focus states */
+a:focus, button:focus, .nav-link:focus{outline:2px dashed rgba(0,240,208,0.25); outline-offset:3px}
+
+/* Typing caret animation for role */
+#typing{border-right:2px solid rgba(0,240,208,0.5); padding-right:6px}
+
+/* Responsive tweaks */
+@media (max-width:992px){ header{padding-top:90px} }
