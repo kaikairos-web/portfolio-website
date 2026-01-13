@@ -38,7 +38,7 @@
           <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
           <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -175,7 +175,7 @@
     </div>
   </section>
 
-  <!-- ADDITIONAL FEATURES: SKILLS, EXPERIENCE, CERTIFICATES, RESUME, BLOG -->
+  <!-- ADDITIONAL FEATURES: SKILLS, CERTIFICATES, RESUME -->
   <section id="skills" class="py-6">
     <div class="container">
       <div class="row mb-4">
@@ -202,41 +202,7 @@
     </div>
   </section>
 
-  <section id="experience" class="py-6 bg-dark-light">
-    <div class="container">
-      <div class="row mb-4">
-        <div class="col text-center text-light" data-aos="fade-up">
-          <h2>Experience & Education</h2>
-          <p class="lead-white">Short history of roles and learning journey</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6" data-aos="fade-right">
-          <div class="timeline">
-            <div class="item">
-              <div class="title">Frontend Developer — Acme Co.</div>
-              <div class="meta">2023 — Present</div>
-              <p class="text-muted">Building responsive web apps and design systems.</p>
-            </div>
-            <div class="item">
-              <div class="title">BSc Computer Science</div>
-              <div class="meta">2019 — 2022</div>
-              <p class="text-muted">Focused on software engineering and web technologies.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-left">
-          <div class="timeline">
-            <div class="item">
-              <div class="title">UI/UX Intern — DesignStudio</div>
-              <div class="meta">2022 — 2023</div>
-              <p class="text-muted">Assisted in prototyping and usability testing.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <section id="certificates" class="py-6">
     <div class="container">
@@ -246,65 +212,83 @@
           <p class="lead-white">Selected online courses and achievements</p>
         </div>
       </div>
-      <div class="row g-3">
-        <div class="col-md-4" data-aos="zoom-in">
-          <div class="card p-3 h-100">
-            <h5 class="mb-2">Frontend Specialization</h5>
-            <p class="text-muted small mb-2">Online Course</p>
-            <a href="#" class="btn btn-sm btn-outline-teal">View</a>
-          </div>
+      <div class="row g-4 cert-grid">
+        <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in">
+          <figure class="card cert-card p-0 overflow-hidden h-100">
+            <img src="assets/images/cert-1.jpg" alt="Frontend Specialization certificate" class="cert-thumb img-fluid" data-full="assets/images/cert-1.jpg">
+            <figcaption class="p-3">
+              <h5 class="mb-1">Frontend Specialization</h5>
+              <p class="text-muted small mb-2">Online Course</p>
+              <button class="btn btn-sm btn-outline-teal view-cert" data-src="assets/images/cert-1.jpg">View</button>
+            </figcaption>
+          </figure>
         </div>
-        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="50">
-          <div class="card p-3 h-100">
-            <h5 class="mb-2">Accessibility Basics</h5>
-            <p class="text-muted small mb-2">Certificate</p>
-            <a href="#" class="btn btn-sm btn-outline-teal">View</a>
+
+        <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="50">
+          <figure class="card cert-card p-0 overflow-hidden h-100">
+            <img src="assets/images/cert-2.jpg" alt="Accessibility Basics certificate" class="cert-thumb img-fluid" data-full="assets/images/cert-2.jpg">
+            <figcaption class="p-3">
+              <h5 class="mb-1">Accessibility Basics</h5>
+              <p class="text-muted small mb-2">Certificate</p>
+              <button class="btn btn-sm btn-outline-teal view-cert" data-src="assets/images/cert-2.jpg">View</button>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+          <figure class="card cert-card p-0 overflow-hidden h-100">
+            <img src="assets/images/cert-3.jpg" alt="Intro to HTML & CSS certificate" class="cert-thumb img-fluid" data-full="assets/images/cert-3.jpg">
+            <figcaption class="p-3">
+              <h5 class="mb-1">Intro to HTML & CSS</h5>
+              <p class="text-muted small mb-2">Certificate</p>
+              <button class="btn btn-sm btn-outline-teal view-cert" data-src="assets/images/cert-3.jpg">View</button>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="150">
+          <figure class="card cert-card p-0 overflow-hidden h-100">
+            <img src="assets/images/cert-4.jpg" alt="Advanced JavaScript certificate" class="cert-thumb img-fluid" data-full="assets/images/cert-4.jpg">
+            <figcaption class="p-3">
+              <h5 class="mb-1">Advanced JavaScript</h5>
+              <p class="text-muted small mb-2">Certificate</p>
+              <button class="btn btn-sm btn-outline-teal view-cert" data-src="assets/images/cert-4.jpg">View</button>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Modal / Lightbox for certificates (hidden by default) -->
+      <div id="certModal" class="cert-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="cert-modal-inner" role="document">
+          <button class="cert-modal-close" aria-label="Close">&times;</button>
+          <img src="" alt="" class="cert-modal-img img-fluid">
+          <p class="cert-modal-caption text-light small mt-3"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="py-6">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+          <div class="resume-card" data-aos="fade-up">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h2 class="text-light">Resume</h2>
+                <p class="lead-white">Download my detailed resume (PDF)</p>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <a href="assets/resume.pdf" download class="btn btn-teal">Download Resume (PDF)</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="resume" class="py-6 bg-dark-light">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6" data-aos="fade-right">
-          <h2 class="text-light">Resume</h2>
-          <p class="lead-white">Download my detailed resume (PDF)</p>
-        </div>
-        <div class="col-md-6 text-md-end" data-aos="fade-left">
-          <a href="assets/resume.pdf" download class="btn btn-teal">Download Resume (PDF)</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="blog" class="py-6">
-    <div class="container">
-      <div class="row mb-4">
-        <div class="col text-center text-light" data-aos="fade-up">
-          <h2>Blog & Notes</h2>
-          <p class="lead-white">Short posts about things I’m learning</p>
-        </div>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6" data-aos="fade-up">
-          <div class="card p-3 h-100">
-            <h5>Understanding CSS Grid</h5>
-            <p class="text-muted small">A short summary of what I learned playing with grid layouts.</p>
-            <a href="#" class="btn btn-sm btn-outline-teal">Read</a>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
-          <div class="card p-3 h-100">
-            <h5>Optimizing Images for Web</h5>
-            <p class="text-muted small">Tips for faster loading and better performance.</p>
-            <a href="#" class="btn btn-sm btn-outline-teal">Read</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- CONTACT -->
   <section id="contact" class="py-6 bg-dark-light">

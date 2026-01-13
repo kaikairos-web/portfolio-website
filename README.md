@@ -7,7 +7,7 @@ This is a modern, responsive, dark-themed portfolio template built with HTML5, C
 - Dark neon teal accent color palette
 - Sticky navbar with smooth scrolling
 - Hero with profile graphic and typing effect
-- About, Services, Portfolio, Skills, Experience, Certificates, Resume (PDF), Blog
+- About, Services, Portfolio, Skills, Certificates, Resume (PDF)
 - Simple JS form validation
 - AOS scroll animations
 - Google Fonts (Noto Serif)

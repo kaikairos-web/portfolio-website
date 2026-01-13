@@ -138,17 +138,38 @@ header{padding-top:140px;}
   .skill-chip{font-size:.95rem; padding:.4rem .8rem}
 }
 
-/* Experience timeline */
-.timeline{position:relative}
-.timeline .item{border-left:3px solid rgba(0,240,208,0.08); padding-left:1rem; margin-bottom:1.5rem}
-.timeline .title{font-weight:700; color:#ffffff}
-.timeline .meta{color:#d4af37}
+
 
 /* Certificates */
-.card p.small{color:#d4af37}
+#certificates{background:linear-gradient(180deg,#181827,#06233b48); border-top:1px solid rgba(255,255,255,0.02)}
+.cert-grid{margin-top:8px}
+.cert-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); border:1px solid rgba(255,255,255,0.03); border-radius:12px; overflow:hidden; transition:transform .28s ease, box-shadow .28s ease; box-shadow:0 10px 30px rgba(0,240,208,0.04); display:flex; flex-direction:column; align-items:center;}
+.cert-card:hover{transform:translateY(-8px); box-shadow:0 22px 70px rgba(0,240,208,0.08); border-color:rgba(0,240,208,0.09)}
+/* Make thumbnails full-width (large) and keep aspect ratio */
+.cert-thumb{display:block; width:100%; height:420px; object-fit:contain; object-position:center; margin:0; border-radius:0; background:#000}
+.cert-card figcaption{background:transparent; text-align:center; padding:18px}
+.view-cert{cursor:pointer}
+
+/* Modal / Lightbox */
+.cert-modal{position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.8); opacity:0; visibility:hidden; transition:opacity .28s ease; z-index:1050}
+.cert-modal.show{opacity:1; visibility:visible}
+.cert-modal-inner{position:relative; transform:scale(.96); transition:transform .28s cubic-bezier(.2,.8,.2,1); max-width:1200px; width:92%; max-height:92vh; overflow:auto; display:flex; flex-direction:column; align-items:center}
+.cert-modal.show .cert-modal-inner{transform:scale(1)}
+.cert-modal-img{display:block; max-width:100%; max-height:82vh; border-radius:8px; box-shadow:0 30px 80px rgba(0,240,208,0.16)}
+.cert-modal-close{position:absolute; top:10px; right:10px; background:transparent; border:0; color:#ffffff; font-size:2rem; line-height:1; padding:6px; cursor:pointer}
+
+/* Responsive adjustments */
+@media (max-width:992px){ .cert-thumb{height:280px; width:92%; max-width:420px} }
+@media (max-width:768px){ .cert-thumb{height:220px; width:92%; max-width:380px} }
+@media (max-width:576px){ .cert-thumb{height:160px; width:92%; max-width:320px} .cert-modal-inner{width:95%} }
 
 /* Resume */
 #resume .btn-teal{padding:.75rem 1.2rem}
+
+.resume-card{background:var(--panel); border:1px solid rgba(255,255,255,0.03); border-radius:14px; padding:1.5rem; box-shadow:0 12px 40px rgba(0,240,208,0.06); position:relative; overflow:hidden}
+.resume-card::before{content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:110%; height:110%; background: radial-gradient(closest-side, rgba(0,240,208,0.06), rgba(0,183,255,0.02), transparent 60%); filter:blur(20px); z-index:0; border-radius:16px; pointer-events:none}
+.resume-card > .row{position:relative; z-index:1}
+@media(max-width:576px){ .resume-card{padding:1rem} }
 
 /* Footer */
 footer{background:#2b2b61}

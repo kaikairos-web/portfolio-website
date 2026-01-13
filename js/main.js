@@ -94,3 +94,86 @@ document.querySelectorAll('[data-social]').forEach(a => {
     a.setAttribute('rel','noopener noreferrer');
   }
 });
+
+// Animate elements when they enter viewport (subtle move+fade)
+(function(){
+  const els = document.querySelectorAll('.animate-on-enter');
+  if(!els.length) return;
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const el = entry.target;
+        // use data-delay (ms) if provided, otherwise compute index-based delay
+        let delay = 0;
+        const d = el.dataset.delay;
+        if(d) delay = parseInt(d);
+        else {
+          // compute index among siblings for staggered effect
+          const list = Array.from(document.querySelectorAll('.animate-on-enter'));
+          delay = (list.indexOf(el) % 6) * 80; // 0..5 * 80ms
+        }
+        el.style.transitionDelay = `${delay}ms`;
+        el.classList.add('in-view');
+        obs.unobserve(el);
+      }
+    });
+  }, {threshold:0.12});
+
+  els.forEach(e => observer.observe(e));
+})();
+
+// Certificates modal (lightbox) - smooth open/close animation
+(function(){
+  const modal = document.getElementById('certModal');
+  if(!modal) return;
+  const inner = modal.querySelector('.cert-modal-inner');
+  const img = modal.querySelector('.cert-modal-img');
+  const caption = modal.querySelector('.cert-modal-caption');
+  const closeBtn = modal.querySelector('.cert-modal-close');
+  let lastFocused = null;
+
+  function openModal(src, alt, title, opener){
+    lastFocused = opener || document.activeElement;
+    img.src = src;
+    img.alt = alt || '';
+    caption.textContent = title || '';
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+    // set focus to close button for keyboard users
+    closeBtn.focus();
+  }
+  function closeModal(){
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+    setTimeout(()=>{ img.src = ''; caption.textContent = ''; if(lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus(); lastFocused = null; }, 300);
+  }
+
+  // Open when any view button clicked
+  document.querySelectorAll('.view-cert').forEach(btn =>{
+    btn.addEventListener('click', (e)=>{
+      const src = btn.dataset.src;
+      const parent = btn.closest('figure');
+      const title = parent ? parent.querySelector('h5')?.textContent : '';
+      openModal(src, title, title, btn);
+    })
+  });
+
+  // Close on close button or click outside the image
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+
+  // Handle ESC key to close and arrow navigation
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+    if((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && modal.classList.contains('show')){
+      const openSrc = img.src;
+      const thumbs = Array.from(document.querySelectorAll('.cert-thumb')).map(i => i.dataset.full || i.src);
+      let idx = thumbs.indexOf(openSrc);
+      if(idx === -1) return;
+      idx = e.key === 'ArrowRight' ? (idx + 1) % thumbs.length : (idx - 1 + thumbs.length) % thumbs.length;
+      img.src = thumbs[idx];
+      const newTitle = document.querySelectorAll('.cert-card h5')[idx]?.textContent || '';
+      caption.textContent = newTitle;
+    }
+  });
+})();
