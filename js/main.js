@@ -3,7 +3,7 @@ AOS.init({duration:800, once:true});
 
 // Typing effect for role text (simple)
 const typingEl = document.getElementById('typing');
-const roles = ['Frontend Developer', 'UI/UX Enthusiast', 'React & JS Lover'];
+const roles = ['Aspiring Frontend Developer', 'UI/UX Enthusiast', 'Learning React & JavaScript'];
 let rIndex = 0, cIndex = 0, forward = true;
 
 function typeLoop(){
