@@ -138,55 +138,14 @@ header{padding-top:140px;}
   .skill-chip{font-size:.95rem; padding:.4rem .8rem}
 }
 
-
+/* Experience timeline */
+.timeline{position:relative}
+.timeline .item{border-left:3px solid rgba(0,240,208,0.08); padding-left:1rem; margin-bottom:1.5rem}
+.timeline .title{font-weight:700; color:#ffffff}
+.timeline .meta{color:#d4af37}
 
 /* Certificates */
-#certificates .card{
-  position:relative;
-  z-index:1;
-  background:#000;
-  border:1px solid rgba(255,255,255,0.04);
-  border-radius:12px;
-  box-shadow:0 12px 40px rgba(0,0,0,0.6);
-  overflow:visible;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-}
-#certificates .card::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  width:120%;
-  height:120%;
-  background: radial-gradient(circle, rgba(0,240,208,0.08), rgba(0,183,255,0.04), transparent 60%);
-  filter:blur(22px);
-  z-index:0;
-  border-radius:14px;
-  pointer-events:none;
-}
-#certificates .card > *{position:relative; z-index:2}
-#certificates .card h5{color:#ffffff}
-#certificates .card p.small{color:#d4af37}
-
-/* Certificate images */
-.cert-img{width:100%; max-width:200px; height:auto; object-fit:cover; border-radius:8px; border:1px solid rgba(255,255,255,0.04); box-shadow:0 8px 30px rgba(0,0,0,0.5)}
-
-/* Make buttons and spacing responsive */
-.view-cert{margin-top:8px}
-@media (max-width:768px){
-  #certificates .card{padding:1.25rem}
-  #certificates .card::before{width:140%; height:140%; filter:blur(18px)}
-  .cert-img{max-width:260px}
-  .view-cert{width:100%; display:block}
-}
-@media (max-width:576px){
-  #certificates .card{padding:.9rem}
-  .cert-img{max-width:220px}
-}
+.card p.small{color:#d4af37}
 
 /* Resume */
 #resume .btn-teal{padding:.75rem 1.2rem}
